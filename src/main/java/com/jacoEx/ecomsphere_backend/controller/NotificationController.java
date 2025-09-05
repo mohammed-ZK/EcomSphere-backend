@@ -1,14 +1,12 @@
 package com.jacoEx.ecomsphere_backend.controller;
 
 import com.jacoEx.ecomsphere_backend.entity.Notification;
-import com.jacoEx.ecomsphere_backend.entity.User;
 import com.jacoEx.ecomsphere_backend.service.NotificationService;
-import com.jacoEx.ecomsphere_backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/notification")
@@ -21,19 +19,26 @@ public class NotificationController {
     public Notification insert(@RequestBody Notification notification) {
         return notificationService.insert(notification);
     }
+    @GetMapping
+    public List<Notification> getAllNotifications() {
+        return notificationService.getAllNotifications();
+    }
 
-//    @GetMapping()
-//    public List<CartDto> getCarts() {
-//        return cartService.getCarts();
-//    }
-//
-//    @GetMapping("{id}")
-//    public BaseResponse<CartDto> getCartById(@PathVariable Long id) {
-//        return cartService.getCart(id);
-//    }
-//
-//    @DeleteMapping("{id}")
-//    public BaseResponse<Void> deleteCart(@PathVariable Long id){
-//        return new BaseResponse<>();
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Notification> getNotificationById(@PathVariable Integer id) {
+        return notificationService.getNotificationById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public Notification updatenotification(@PathVariable Integer id, @RequestBody Notification notificationDetails) {
+        return notificationService.updateNotification(id, notificationDetails);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteNotification(@PathVariable Integer id) {
+        notificationService.deleteNotification(id);
+        return ResponseEntity.noContent().build();
+    }
 }

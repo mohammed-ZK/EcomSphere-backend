@@ -7,6 +7,9 @@ import com.jacoEx.ecomsphere_backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProductService {
     @Autowired
@@ -15,18 +18,30 @@ public class ProductService {
     public Product insert(Product product){
         return productRepository.save(product);
     }
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 
-//    public List<CartDto> getCarts() throws Exception {
-//
-//        return cartDtos;
-//    }
-//
-//    public BaseResponse<Void> deleteCart(Long id) throws Exception {
-//        return baseResponse;
-//    }
-//
-//    public BaseResponse<CartDto> getCart(Long id) throws Exception {
-//        return baseResponse;
-//
-//    }
+    public Optional<Product> getProductById(Integer id) {
+        return productRepository.findById(id);
+    }
+
+    public Product updateProduct(Integer id, Product productDetails) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
+
+        product.setDescription(productDetails.getDescription());
+        product.setName(productDetails.getName());
+        product.setPrice(productDetails.getPrice());
+        product.setImageUrl(productDetails.getImageUrl());
+        product.setStockQuantity(productDetails.getStockQuantity());
+
+        return productRepository.save(product);
+    }
+
+    public void deleteProduct(Integer id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("product not found with id: " + id));
+        productRepository.delete(product);
+    }
 }

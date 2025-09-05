@@ -1,11 +1,12 @@
 package com.jacoEx.ecomsphere_backend.service;
 
 import com.jacoEx.ecomsphere_backend.entity.Payment;
-import com.jacoEx.ecomsphere_backend.entity.User;
 import com.jacoEx.ecomsphere_backend.repository.PaymentRepository;
-import com.jacoEx.ecomsphere_backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PaymentService {
@@ -13,21 +14,30 @@ public class PaymentService {
     private PaymentRepository paymentRepository;
 
 
-    public Payment insert(Payment payment) {
+    public Payment insert (Payment payment) {
         return paymentRepository.save(payment);
     }
 
-//    public List<CartDto> getCarts() throws Exception {
-//
-//        return cartDtos;
-//    }
-//
-//    public BaseResponse<Void> deleteCart(Long id) throws Exception {
-//        return baseResponse;
-//    }
-//
-//    public BaseResponse<CartDto> getCart(Long id) throws Exception {
-//        return baseResponse;
-//
-//    }
+    public List< Payment > getAllPayments () {
+        return paymentRepository.findAll();
+    }
+
+    public Optional< Payment > getPaymentById (Integer id) {
+        return paymentRepository.findById(id);
+    }
+
+    public Payment updatePayment (Integer id , Payment paymentDetails) {
+        Payment payment = paymentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("payment not found with id: " + id));
+        payment.setAmount(paymentDetails.getAmount());
+        payment.setMethod(paymentDetails.getMethod());
+        payment.setSuccessful(paymentDetails.isSuccessful());
+        return paymentRepository.save(payment);
+    }
+
+    public void deletePayment (Integer id) {
+        Payment payment = paymentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("payment not found with id: " + id));
+        paymentRepository.delete(payment);
+    }
 }

@@ -18,14 +18,14 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(nullable = false)
+    //    @Column(nullable = false)
     private String title;
 
-//    @Column(nullable = false, length = 1000)
+    //    @Column(nullable = false, length = 1000)
     private String message;
 
-//    @Column(nullable = false)
-    private boolean isRead =true;
+    //    @Column(nullable = false)
+    private boolean isRead = true;
 
 //    @Column(nullable = false)
 //    private LocalDateTime createdAt = LocalDateTime.now();
@@ -35,35 +35,35 @@ public class Notification {
 //    private User user;
 
 
-    public void setId(Long id) {
+    public void setId (Long id) {
         this.id = id;
     }
 
-    public void setTitle(String title) {
+    public void setTitle (String title) {
         this.title = title;
     }
 
-    public void setMessage(String message) {
+    public void setMessage (String message) {
         this.message = message;
     }
 
-    public void setRead(boolean read) {
+    public void setRead (boolean read) {
         isRead = read;
     }
 
-    public Long getId() {
+    public Long getId () {
         return id;
     }
 
-    public String getTitle() {
+    public String getTitle () {
         return title;
     }
 
-    public String getMessage() {
+    public String getMessage () {
         return message;
     }
 
-    public boolean isRead() {
+    public boolean isRead () {
         return isRead;
     }
 }
