@@ -5,10 +5,10 @@ import lombok.*;
 
 @Entity
 @Table(name = "inventory")
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Inventory {
 
     @Id
@@ -23,35 +23,35 @@ public class Inventory {
 
     private int reservedQuantity;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-//    public void setProduct(Product product) {
-//        this.product = product;
+//    public void setId(Long id) {
+//        this.id = id;
 //    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setReservedQuantity(int reservedQuantity) {
-        this.reservedQuantity = reservedQuantity;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-//    public Product getProduct() {
-//        return product;
+//
+////    public void setProduct(Product product) {
+////        this.product = product;
+////    }
+//
+//    public void setQuantity(int quantity) {
+//        this.quantity = quantity;
 //    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public int getReservedQuantity() {
-        return reservedQuantity;
-    }
+//
+//    public void setReservedQuantity(int reservedQuantity) {
+//        this.reservedQuantity = reservedQuantity;
+//    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+////    public Product getProduct() {
+////        return product;
+////    }
+//
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public int getReservedQuantity() {
+//        return reservedQuantity;
+//    }
 }

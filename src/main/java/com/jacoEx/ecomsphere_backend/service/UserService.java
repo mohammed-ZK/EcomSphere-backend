@@ -32,7 +32,9 @@ public class UserService {
         user.setEmail(userDetails.getEmail());
         user.setPassword(userDetails.getPassword());
         user.setPhone(userDetails.getPhone());
-        user.setEnabled(userDetails.isEnabled());
+        user.setCart(userDetails.getCart());
+        user.setAddresses(userDetails.getAddresses());
+        user.setOrders(userDetails.getOrders());
         return userRepository.save(user);
     }
 

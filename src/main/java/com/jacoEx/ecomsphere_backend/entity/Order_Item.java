@@ -1,31 +1,71 @@
 package com.jacoEx.ecomsphere_backend.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "order_items")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Order_Item {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    private int quantity;
+
+    private BigDecimal price;
+
+//    public Long getId () {
+//        return id;
+//    }
 //
-//import jakarta.persistence.*;
-//import lombok.*;
-//import java.math.BigDecimal;
+//    public Order getOrder () {
+//        return order;
+//    }
 //
-//@Entity
-//@Table(name = "order_items")
-////@Data
-////@NoArgsConstructor
-////@AllArgsConstructor
-////@Builder
-//public class Order_Item {
+//    public Product getProduct () {
+//        return product;
+//    }
 //
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+//    public int getQuantity () {
+//        return quantity;
+//    }
 //
-////    @ManyToOne
-//    @JoinColumn(name = "order_id")
-//    private Order order;
+//    public BigDecimal getPrice () {
+//        return price;
+//    }
 //
-////    @ManyToOne
-////    @JoinColumn(name = "product_id")
-//    private Product product;
+//    public void setId (Long id) {
+//        this.id = id;
+//    }
 //
-//    private int quantity;
+//    public void setOrder (Order order) {
+//        this.order = order;
+//    }
 //
-//    private BigDecimal price;
-//}
+//    public void setProduct (Product product) {
+//        this.product = product;
+//    }
 //
+//    public void setQuantity (int quantity) {
+//        this.quantity = quantity;
+//    }
+//
+//    public void setPrice (BigDecimal price) {
+//        this.price = price;
+//    }
+
+}
+

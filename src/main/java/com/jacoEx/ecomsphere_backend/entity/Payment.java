@@ -2,16 +2,18 @@ package com.jacoEx.ecomsphere_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "payments")
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Payment {
 
     @Id
@@ -30,51 +32,82 @@ public class Payment {
 
     private boolean successful;
 
-    public void setId (Long id) {
-        this.id = id;
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void prePersist() {
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
     }
 
-//    public void setOrder(Order order) {
-//        this.order = order;
-//    }
-
-    public void setAmount (BigDecimal amount) {
-        this.amount = amount;
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 
-    public void setMethod (String method) {
-        this.method = method;
-    }
-
-//    public void setPaymentDate(LocalDateTime paymentDate) {
-//        this.paymentDate = paymentDate;
-//    }
-
-    public void setSuccessful (boolean successful) {
-        this.successful = successful;
-    }
-
-    public Long getId () {
-        return id;
-    }
-
-//    public Order getOrder() {
+//    public Order getOrder () {
 //        return order;
 //    }
-
-    public BigDecimal getAmount () {
-        return amount;
-    }
-
-    public String getMethod () {
-        return method;
-    }
-
-//    public LocalDateTime getPaymentDate() {
-//        return paymentDate;
+//
+//    public void setOrder (Order order) {
+//        this.order = order;
 //    }
-
-    public boolean isSuccessful () {
-        return successful;
-    }
+//
+//    public void setId (Long id) {
+//        this.id = id;
+//    }
+//
+////    public void setOrder(Order order) {
+////        this.order = order;
+////    }
+//
+//    public void setAmount (BigDecimal amount) {
+//        this.amount = amount;
+//    }
+//
+//    public void setMethod (String method) {
+//        this.method = method;
+//    }
+//
+////    public void setPaymentDate(LocalDateTime paymentDate) {
+////        this.paymentDate = paymentDate;
+////    }
+//
+//    public void setSuccessful (boolean successful) {
+//        this.successful = successful;
+//    }
+//
+//    public Long getId () {
+//        return id;
+//    }
+//
+////    public Order getOrder() {
+////        return order;
+////    }
+//
+//    public BigDecimal getAmount () {
+//        return amount;
+//    }
+//
+//    public String getMethod () {
+//        return method;
+//    }
+//
+////    public LocalDateTime getPaymentDate() {
+////        return paymentDate;
+////    }
+//
+//    public boolean isSuccessful () {
+//        return successful;
+//    }
 }

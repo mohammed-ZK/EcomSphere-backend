@@ -32,6 +32,8 @@ public class PaymentService {
         payment.setAmount(paymentDetails.getAmount());
         payment.setMethod(paymentDetails.getMethod());
         payment.setSuccessful(paymentDetails.isSuccessful());
+        payment.setOrder(paymentDetails.getOrder());
+
         return paymentRepository.save(payment);
     }
 

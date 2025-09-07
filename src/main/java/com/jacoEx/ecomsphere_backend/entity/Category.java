@@ -2,14 +2,18 @@ package com.jacoEx.ecomsphere_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "categories")
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Category {
 
     @Id
@@ -22,25 +26,55 @@ public class Category {
 //    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 //    private List<Product> products;
 
-    public void setId(Long id) {
-        this.id = id;
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void prePersist() {
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 
-//    public void setProducts(List<Product> products) {
+//    public List< Product > getProducts () {
+//        return products;
+//    }
+//
+//    public void setProducts (List< Product > products) {
 //        this.products = products;
 //    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+////    public void setProducts(List<Product> products) {
+////        this.products = products;
+////    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
 
 //    public List<Product> getProducts() {
 //        return products;

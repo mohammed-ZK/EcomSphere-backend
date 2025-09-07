@@ -7,10 +7,10 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "coupons")
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Coupon {
 
     @Id
@@ -26,44 +26,44 @@ public class Coupon {
 
     private boolean active = true;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
-    }
-
-//    public void setExpiryDate(LocalDate expiryDate) {
-//        this.expiryDate = expiryDate;
+//    public void setId(Long id) {
+//        this.id = id;
 //    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public BigDecimal getDiscount() {
-        return discount;
-    }
-
-//    public LocalDate getExpiryDate() {
-//        return expiryDate;
+//
+//    public void setCode(String code) {
+//        this.code = code;
 //    }
-
-    public boolean isActive() {
-        return active;
-    }
+//
+//    public void setDiscount(BigDecimal discount) {
+//        this.discount = discount;
+//    }
+//
+////    public void setExpiryDate(LocalDate expiryDate) {
+////        this.expiryDate = expiryDate;
+////    }
+//
+//    public void setActive(boolean active) {
+//        this.active = active;
+//    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public String getCode() {
+//        return code;
+//    }
+//
+//    public BigDecimal getDiscount() {
+//        return discount;
+//    }
+//
+////    public LocalDate getExpiryDate() {
+////        return expiryDate;
+////    }
+//
+//    public boolean isActive() {
+//        return active;
+//    }
 }
 

@@ -34,6 +34,7 @@ public class AddessService {
         address.setStreet(addressDetails.getStreet());
         address.setPhoneNumber(addressDetails.getPhoneNumber());
         address.setPostalCode(addressDetails.getPostalCode());
+        address.setUser(addressDetails.getUser());
 
         return addessRepository.save(address);
     }

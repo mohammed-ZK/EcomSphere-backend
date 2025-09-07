@@ -2,14 +2,18 @@ package com.jacoEx.ecomsphere_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "addresses")
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Address {
 
     @Id
@@ -38,65 +42,96 @@ public class Address {
 //    @JoinColumn(name = "user_id", nullable = false)
 //    private User user;
 
-    public void setId(Long id) {
-        this.id = id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void prePersist() {
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-//    public void setUser(User user) {
+//    public User getUser () {
+//        return user;
+//    }
+//
+//    public void setUser (User user) {
 //        this.user = user;
 //    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setStreet(String street) {
+//        this.street = street;
+//    }
+//
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
+//
+//    public void setState(String state) {
+//        this.state = state;
+//    }
+//
+//    public void setCountry(String country) {
+//        this.country = country;
+//    }
+//
+//    public void setPostalCode(String postalCode) {
+//        this.postalCode = postalCode;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
+//
+////    public void setUser(User user) {
+////        this.user = user;
+////    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public String getStreet() {
+//        return street;
+//    }
+//
+//    public String getCity() {
+//        return city;
+//    }
+//
+//    public String getState() {
+//        return state;
+//    }
+//
+//    public String getCountry() {
+//        return country;
+//    }
+//
+//    public String getPostalCode() {
+//        return postalCode;
+//    }
+//
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
 
 //    public User getUser() {
 //        return user;

@@ -29,6 +29,10 @@ public class OrderService {
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("order not found with id: " + id));
         order.setTotalAmount(orderDetails.getTotalAmount());
+        order.setAddress(orderDetails.getAddress());
+        order.setPayment(orderDetails.getPayment());
+        order.setUser(orderDetails.getUser());
+        order.setOrderItems(orderDetails.getOrderItems());
 
         return orderRepository.save(order);
     }

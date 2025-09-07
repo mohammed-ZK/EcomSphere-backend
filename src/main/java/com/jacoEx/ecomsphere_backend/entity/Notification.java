@@ -7,11 +7,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "notifications")
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Notification {
 
     @Id
@@ -35,35 +34,35 @@ public class Notification {
 //    private User user;
 
 
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public void setTitle (String title) {
-        this.title = title;
-    }
-
-    public void setMessage (String message) {
-        this.message = message;
-    }
-
-    public void setRead (boolean read) {
-        isRead = read;
-    }
-
-    public Long getId () {
-        return id;
-    }
-
-    public String getTitle () {
-        return title;
-    }
-
-    public String getMessage () {
-        return message;
-    }
-
-    public boolean isRead () {
-        return isRead;
-    }
+//    public void setId (Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setTitle (String title) {
+//        this.title = title;
+//    }
+//
+//    public void setMessage (String message) {
+//        this.message = message;
+//    }
+//
+//    public void setRead (boolean read) {
+//        isRead = read;
+//    }
+//
+//    public Long getId () {
+//        return id;
+//    }
+//
+//    public String getTitle () {
+//        return title;
+//    }
+//
+//    public String getMessage () {
+//        return message;
+//    }
+//
+//    public boolean isRead () {
+//        return isRead;
+//    }
 }
