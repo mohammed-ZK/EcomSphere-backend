@@ -60,91 +60,79 @@ public class Order {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    public User getUser () {
-//        return user;
-//    }
-//
-//    public Address getAddress () {
-//        return address;
-//    }
-//
-//    public List< Order_Item > getOrderItems () {
-//        return orderItems;
-//    }
-//
-//    public Payment getPayment () {
-//        return payment;
-//    }
-//
-//    public void setUser (User user) {
-//        this.user = user;
-//    }
-//
-//    public void setAddress (Address address) {
-//        this.address = address;
-//    }
-//
-//    public void setOrderItems (List< Order_Item > orderItems) {
-//        this.orderItems = orderItems;
-//    }
-//
-//    public void setPayment (Payment payment) {
-//        this.payment = payment;
-//    }
-//    //    @Enumerated(EnumType.STRING)
-////    private Order_Item status;
-//
-////    private LocalDateTime createdAt = LocalDateTime.now();
-//
-////    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-////    private List<Order_Item> orderItems;
-//
-//    public void setId(Long id) {
+//    public Order (Long id , BigDecimal totalAmount , User user , Address address , List< Order_Item > orderItems , Payment payment , LocalDateTime createdAt , LocalDateTime updatedAt) {
 //        this.id = id;
-//    }
-//
-////    public void setUser(User user) {
-////        this.user = user;
-////    }
-//
-//    public void setTotalAmount(BigDecimal totalAmount) {
 //        this.totalAmount = totalAmount;
+//        this.user = user;
+//        this.address = address;
+//        this.orderItems = orderItems;
+//        this.payment = payment;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
 //    }
-//
-////    public void setStatus(Order_Item status) {
-////        this.status = status;
-////    }
-//
-////    public void setCreatedAt(LocalDateTime createdAt) {
-////        this.createdAt = createdAt;
-////    }
-//
-////    public void setOrderItems(List<Order_Item> orderItems) {
-////        this.orderItems = orderItems;
-////    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-////    public User getUser() {
-////        return user;
-////    }
-//
-//    public BigDecimal getTotalAmount() {
-//        return totalAmount;
-//    }
-//
-////    public Order_Item getStatus() {
-////        return status;
-////    }
-//
-////    public LocalDateTime getCreatedAt() {
-////        return createdAt;
-////    }
-//
-////    public List<Order_Item> getOrderItems() {
-////        return orderItems;
-////    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public BigDecimal getTotalAmount () {
+        return totalAmount;
+    }
+
+    public User getUser () {
+        return user;
+    }
+
+    public Address getAddress () {
+        return address;
+    }
+
+    public List< Order_Item > getOrderItems () {
+        return orderItems;
+    }
+
+    public Payment getPayment () {
+        return payment;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt () {
+        return updatedAt;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setTotalAmount (BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public void setUser (User user) {
+        this.user = user;
+    }
+
+    public void setAddress (Address address) {
+        this.address = address;
+    }
+
+    public void setOrderItems (List< Order_Item > orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void setPayment (Payment payment) {
+        this.payment = payment;
+    }
+
+    public void setCreatedAt (LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt (LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
 

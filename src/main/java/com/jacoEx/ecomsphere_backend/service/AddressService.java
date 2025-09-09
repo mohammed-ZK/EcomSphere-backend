@@ -9,15 +9,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AddessService {
+public class AddressService {
     @Autowired
-    private AddessRepository addessRepository;
+    private final AddessRepository addessRepository;
+
+    public AddressService (AddessRepository addessRepository) {
+        this.addessRepository = addessRepository;
+    }
 
     public Address insert (Address address) {
         return addessRepository.save(address);
     }
 
-    public List< Address > getAllAddresss () {
+    public List< Address > getAllAddresses () {
         return addessRepository.findAll();
     }
 
@@ -32,7 +36,7 @@ public class AddessService {
         address.setCountry(addressDetails.getCountry());
         address.setState(addressDetails.getState());
         address.setStreet(addressDetails.getStreet());
-        address.setPhoneNumber(addressDetails.getPhoneNumber());
+//        address.setPhoneNumber(addressDetails.getPhoneNumber());
         address.setPostalCode(addressDetails.getPostalCode());
         address.setUser(addressDetails.getUser());
 

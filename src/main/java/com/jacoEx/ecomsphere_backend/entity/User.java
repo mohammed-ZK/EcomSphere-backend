@@ -62,76 +62,105 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    public Role getRole () {
-//        return role;
-//    }
-//
-//    public void setRole (Role role) {
-//        this.role = role;
-//    }
-//
-//    public List< Address > getAddresses () {
-//        return addresses;
-//    }
-//
-//    public Cart getCart () {
-//        return cart;
-//    }
-//
-//    public List< Order > getOrders () {
-//        return orders;
-//    }
-//
-//    public void setAddresses (List< Address > addresses) {
-//        this.addresses = addresses;
-//    }
-//
-//    public void setCart (Cart cart) {
-//        this.cart = cart;
-//    }
-//
-//    public void setOrders (List< Order > orders) {
-//        this.orders = orders;
-//    }
-//
-//    public void setId(Long id) {
+//    public User (Long id , String username , String email , String password , String phone , Role role , List< Address > addresses , Cart cart , List< Order > orders , LocalDateTime createdAt , LocalDateTime updatedAt) {
 //        this.id = id;
-//    }
-//
-//    public void setUsername(String username) {
 //        this.username = username;
-//    }
-//
-//    public void setEmail(String email) {
 //        this.email = email;
-//    }
-//
-//    public void setPassword(String password) {
 //        this.password = password;
-//    }
-//
-//    public void setPhone(String phone) {
 //        this.phone = phone;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public String getPhone() {
-//        return phone;
+//        this.role = role;
+//        this.addresses = addresses;
+//        this.cart = cart;
+//        this.orders = orders;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
 //    }
 
+    public Long getId () {
+        return id;
+    }
+
+    public String getUsername () {
+        return username;
+    }
+
+    public String getEmail () {
+        return email;
+    }
+
+    public String getPassword () {
+        return password;
+    }
+
+    public String getPhone () {
+        return phone;
+    }
+
+    public Role getRole () {
+        return role;
+    }
+
+    public List< Address > getAddresses () {
+        return addresses;
+    }
+
+    public Cart getCart () {
+        return cart;
+    }
+
+    public List< Order > getOrders () {
+        return orders;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt () {
+        return updatedAt;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setUsername (String username) {
+        this.username = username;
+    }
+
+    public void setEmail (String email) {
+        this.email = email;
+    }
+
+    public void setPassword (String password) {
+        this.password = password;
+    }
+
+    public void setPhone (String phone) {
+        this.phone = phone;
+    }
+
+    public void setRole (Role role) {
+        this.role = role;
+    }
+
+    public void setAddresses (List< Address > addresses) {
+        this.addresses = addresses;
+    }
+
+    public void setCart (Cart cart) {
+        this.cart = cart;
+    }
+
+    public void setOrders (List< Order > orders) {
+        this.orders = orders;
+    }
+
+    public void setCreatedAt (LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt (LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

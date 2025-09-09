@@ -23,35 +23,33 @@ public class Inventory {
 
     private int reservedQuantity;
 
-//    public void setId(Long id) {
+//    public Inventory (Long id , int quantity , int reservedQuantity) {
 //        this.id = id;
-//    }
-//
-////    public void setProduct(Product product) {
-////        this.product = product;
-////    }
-//
-//    public void setQuantity(int quantity) {
 //        this.quantity = quantity;
-//    }
-//
-//    public void setReservedQuantity(int reservedQuantity) {
 //        this.reservedQuantity = reservedQuantity;
 //    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-////    public Product getProduct() {
-////        return product;
-////    }
-//
-//    public int getQuantity() {
-//        return quantity;
-//    }
-//
-//    public int getReservedQuantity() {
-//        return reservedQuantity;
-//    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public int getQuantity () {
+        return quantity;
+    }
+
+    public int getReservedQuantity () {
+        return reservedQuantity;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setQuantity (int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setReservedQuantity (int reservedQuantity) {
+        this.reservedQuantity = reservedQuantity;
+    }
 }

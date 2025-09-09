@@ -26,43 +26,42 @@ public class Notification {
     //    @Column(nullable = false)
     private boolean isRead = true;
 
-//    @Column(nullable = false)
-//    private LocalDateTime createdAt = LocalDateTime.now();
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
-
-
-//    public void setId (Long id) {
+//    public Notification (Long id , String title , String message , boolean isRead) {
 //        this.id = id;
-//    }
-//
-//    public void setTitle (String title) {
 //        this.title = title;
-//    }
-//
-//    public void setMessage (String message) {
 //        this.message = message;
+//        this.isRead = isRead;
 //    }
-//
-//    public void setRead (boolean read) {
-//        isRead = read;
-//    }
-//
-//    public Long getId () {
-//        return id;
-//    }
-//
-//    public String getTitle () {
-//        return title;
-//    }
-//
-//    public String getMessage () {
-//        return message;
-//    }
-//
-//    public boolean isRead () {
-//        return isRead;
-//    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public String getTitle () {
+        return title;
+    }
+
+    public String getMessage () {
+        return message;
+    }
+
+    public boolean isRead () {
+        return isRead;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setTitle (String title) {
+        this.title = title;
+    }
+
+    public void setMessage (String message) {
+        this.message = message;
+    }
+
+    public void setRead (boolean read) {
+        isRead = read;
+    }
 }

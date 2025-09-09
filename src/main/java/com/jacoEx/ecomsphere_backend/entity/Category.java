@@ -48,36 +48,52 @@ public class Category {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    public List< Product > getProducts () {
-//        return products;
-//    }
-//
-//    public void setProducts (List< Product > products) {
-//        this.products = products;
-//    }
-//
-//    public void setId(Long id) {
+//    public Category (Long id , String name , List< Product > products , LocalDateTime createdAt , LocalDateTime updatedAt) {
 //        this.id = id;
-//    }
-//
-//    public void setName(String name) {
 //        this.name = name;
-//    }
-//
-////    public void setProducts(List<Product> products) {
-////        this.products = products;
-////    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public String getName() {
-//        return name;
+//        this.products = products;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
 //    }
 
-//    public List<Product> getProducts() {
-//        return products;
-//    }
+    public Long getId () {
+        return id;
+    }
+
+    public String getName () {
+        return name;
+    }
+
+    public List< Product > getProducts () {
+        return products;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt () {
+        return updatedAt;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setName (String name) {
+        this.name = name;
+    }
+
+    public void setProducts (List< Product > products) {
+        this.products = products;
+    }
+
+    public void setCreatedAt (LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt (LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
 

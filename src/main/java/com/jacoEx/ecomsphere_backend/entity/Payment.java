@@ -55,59 +55,69 @@ public class Payment {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    public Order getOrder () {
-//        return order;
-//    }
-//
-//    public void setOrder (Order order) {
-//        this.order = order;
-//    }
-//
-//    public void setId (Long id) {
+//    public Payment (Long id , BigDecimal amount , String method , boolean successful , Order order , LocalDateTime createdAt , LocalDateTime updatedAt) {
 //        this.id = id;
-//    }
-//
-////    public void setOrder(Order order) {
-////        this.order = order;
-////    }
-//
-//    public void setAmount (BigDecimal amount) {
 //        this.amount = amount;
-//    }
-//
-//    public void setMethod (String method) {
 //        this.method = method;
-//    }
-//
-////    public void setPaymentDate(LocalDateTime paymentDate) {
-////        this.paymentDate = paymentDate;
-////    }
-//
-//    public void setSuccessful (boolean successful) {
 //        this.successful = successful;
+//        this.order = order;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
 //    }
-//
-//    public Long getId () {
-//        return id;
-//    }
-//
-////    public Order getOrder() {
-////        return order;
-////    }
-//
-//    public BigDecimal getAmount () {
-//        return amount;
-//    }
-//
-//    public String getMethod () {
-//        return method;
-//    }
-//
-////    public LocalDateTime getPaymentDate() {
-////        return paymentDate;
-////    }
-//
-//    public boolean isSuccessful () {
-//        return successful;
-//    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public BigDecimal getAmount () {
+        return amount;
+    }
+
+    public String getMethod () {
+        return method;
+    }
+
+    public boolean isSuccessful () {
+        return successful;
+    }
+
+    public Order getOrder () {
+        return order;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt () {
+        return updatedAt;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setAmount (BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public void setMethod (String method) {
+        this.method = method;
+    }
+
+    public void setSuccessful (boolean successful) {
+        this.successful = successful;
+    }
+
+    public void setOrder (Order order) {
+        this.order = order;
+    }
+
+    public void setCreatedAt (LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt (LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

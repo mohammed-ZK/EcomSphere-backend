@@ -25,7 +25,7 @@ public class CartService {
         return cartRepository.findById(id);
     }
 
-    public Cart updatecart (Integer id , Cart cartDetails) {
+    public Cart updateCart (Integer id , Cart cartDetails) {
         Cart cart = cartRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("cart not found with id: " + id));
         cart.setCartItems(cartDetails.getCartItems());

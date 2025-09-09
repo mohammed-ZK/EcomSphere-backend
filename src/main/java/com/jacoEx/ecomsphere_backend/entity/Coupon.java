@@ -26,44 +26,43 @@ public class Coupon {
 
     private boolean active = true;
 
-//    public void setId(Long id) {
+//    public Coupon (Long id , String code , BigDecimal discount , boolean active) {
 //        this.id = id;
-//    }
-//
-//    public void setCode(String code) {
 //        this.code = code;
-//    }
-//
-//    public void setDiscount(BigDecimal discount) {
 //        this.discount = discount;
-//    }
-//
-////    public void setExpiryDate(LocalDate expiryDate) {
-////        this.expiryDate = expiryDate;
-////    }
-//
-//    public void setActive(boolean active) {
 //        this.active = active;
 //    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public String getCode() {
-//        return code;
-//    }
-//
-//    public BigDecimal getDiscount() {
-//        return discount;
-//    }
-//
-////    public LocalDate getExpiryDate() {
-////        return expiryDate;
-////    }
-//
-//    public boolean isActive() {
-//        return active;
-//    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public String getCode () {
+        return code;
+    }
+
+    public BigDecimal getDiscount () {
+        return discount;
+    }
+
+    public boolean isActive () {
+        return active;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setCode (String code) {
+        this.code = code;
+    }
+
+    public void setDiscount (BigDecimal discount) {
+        this.discount = discount;
+    }
+
+    public void setActive (boolean active) {
+        this.active = active;
+    }
 }
 

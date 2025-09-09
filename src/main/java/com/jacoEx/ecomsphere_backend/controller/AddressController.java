@@ -1,7 +1,7 @@
 package com.jacoEx.ecomsphere_backend.controller;
 
 import com.jacoEx.ecomsphere_backend.entity.Address;
-import com.jacoEx.ecomsphere_backend.service.AddessService;
+import com.jacoEx.ecomsphere_backend.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class AddressController {
 
     @Autowired
-    private AddessService addressService;
+    private AddressService addressService;
 
     @PostMapping()
     public Address insert(@RequestBody Address address) {
@@ -21,7 +21,7 @@ public class AddressController {
     }
     @GetMapping
     public List<Address> getAllAddresss() {
-        return addressService.getAllAddresss();
+        return addressService.getAllAddresses();
     }
 
     @GetMapping("/{id}")

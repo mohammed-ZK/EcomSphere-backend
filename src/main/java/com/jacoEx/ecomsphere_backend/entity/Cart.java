@@ -46,28 +46,52 @@ public class Cart {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    public User getUser () {
-//        return user;
-//    }
-//
-//    public List< Cart_Item > getCartItems () {
-//        return cartItems;
-//    }
-//
-//    public void setUser (User user) {
-//        this.user = user;
-//    }
-//
-//    public void setCartItems (List< Cart_Item > cartItems) {
-//        this.cartItems = cartItems;
-//    }
-//
-//    public void setId(Long id) {
+//    public Cart (Long id , User user , List< Cart_Item > cartItems , LocalDateTime createdAt , LocalDateTime updatedAt) {
 //        this.id = id;
+//        this.user = user;
+//        this.cartItems = cartItems;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
 //    }
-//
-//    public Long getId() {
-//        return id;
-//    }
+
+    public Long getId () {
+        return id;
+    }
+
+    public User getUser () {
+        return user;
+    }
+
+    public List< Cart_Item > getCartItems () {
+        return cartItems;
+    }
+
+    public LocalDateTime getCreatedAt () {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt () {
+        return updatedAt;
+    }
+
+    public void setId (Long id) {
+        this.id = id;
+    }
+
+    public void setUser (User user) {
+        this.user = user;
+    }
+
+    public void setCartItems (List< Cart_Item > cartItems) {
+        this.cartItems = cartItems;
+    }
+
+    public void setCreatedAt (LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt (LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
 
